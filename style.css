@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: medium;
+    font-weight: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*  Header styles */
+#headerContainer > h1{
+    font-size: large;
+    font-weight: bold;
+    color: rgb(108, 118, 252);
+}
+
+#headerContainer >small{
+    font-size: small;
+    font-weight: normal;
+    color: rgb(128, 86, 177);
+}
+
+#headerContainer{
+    margin: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 2px 3px rgba(133, 68, 207, 0.8);
+    background-color: rgb(129, 220, 236);
+    text-align: center;
+}
+
+#formContainer{
+    margin: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 2px 3px rgba(133, 68, 207, 0.8);
+    background-color: rgb(129, 220, 236);
+}
+
+#formContainer >{
+
+}
