@@ -30,12 +30,97 @@
 
 #formContainer{
     margin: 30px;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 25px;
+    border-radius: 30px;
     box-shadow: 2px 3px rgba(133, 68, 207, 0.8);
     background-color: rgb(129, 220, 236);
 }
 
-#formContainer >{
+#formContainer > #studentForm > .input-field{
+      display: flex;
+      flex-direction:column;
+        margin-bottom: 15px;
+}
 
+#formContainer > #studentForm > .input-field > label{
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#formContainer > #studentForm > .input-field > input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(108, 118, 252);
+    font-size: 15px;
+    outline: none;
+
+}
+
+#formContainer > #studentForm > :nth-last-child(1) > button {
+    background-color: rgb(108, 118, 252); 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;}
+
+#listContainer > .list-item{
+    margin: 30px;
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: 2px 3px rgba(133, 68, 207, 0.8);
+    background-color: rgb(186, 241, 250);
+}
+  
+#listContainer > .list-item >h2{
+    margin: 30px;
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: 2px 3px rgba(133, 68, 207, 0.8);
+    background-color: rgb(240, 253, 255);
+}
+
+#listContainer > .list-item >p{
+    margin: 30px;
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: 2px 3px rgba(133, 68, 207, 0.8);
+    background-color: rgb(255, 255, 255);
+}
+
+#listContainer > .list-item >button{
+    margin: 10px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 2px 3px rgba(0, 0, 0, 0.8);
+    background-color: rgb(246, 246, 246);
+}
+
+#listContainer > .list-item >button:hover{
+    background-color: rgb(108, 118, 252);
+    color: white;
+}
+
+#listContainer{
+    display: grid;
+    grid-template-columns: repeat(12,1fr) ;
+}
+
+@media (width <= 320px) {
+    #listContainer > .list-item{
+        display: grid;
+        grid-column: span 12;
+    }
+}
+
+@media (width > 1000px) {
+    #listContainer > .list-item{
+        grid-column: span 2;
+    }
+}
+
+@media (width > 320px) and (width <= 1000px) {
+    #listContainer > .list-item{
+        grid-column: span 4;
+    }
 }
