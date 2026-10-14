@@ -1,126 +1,232 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-size: medium;
-    font-weight: normal;
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/*  Header styles */
-#headerContainer > h1{
-    font-size: large;
-    font-weight: bold;
-    color: rgb(108, 118, 252);
+body {
+    background: #f4f6ff;
+    color: #303552;
+    padding: 10px;
 }
 
-#headerContainer >small{
-    font-size: small;
-    font-weight: normal;
-    color: rgb(128, 86, 177);
-}
-
-#headerContainer{
-    margin: 30px;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 2px 3px rgba(133, 68, 207, 0.8);
-    background-color: rgb(129, 220, 236);
+/* ===== HEADER ===== */
+#headerContainer {
+    margin: 20px auto;
+    padding: 24px 20px;
+    max-width: 1200px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #81dcec, #a8c5ff);
+    box-shadow: 0 5px 15px rgba(108, 118, 252, 0.18);
     text-align: center;
 }
 
-#formContainer{
-    margin: 30px;
-    padding: 25px;
-    border-radius: 30px;
-    box-shadow: 2px 3px rgba(133, 68, 207, 0.8);
-    background-color: rgb(129, 220, 236);
-}
-
-#formContainer > #studentForm > .input-field{
-      display: flex;
-      flex-direction:column;
-        margin-bottom: 15px;
-}
-
-#formContainer > #studentForm > .input-field > label{
+#headerContainer > h1 {
+    font-size: 26px;
     font-weight: 700;
-    margin-bottom: 10px;
+    color: #454ec2;
 }
 
-#formContainer > #studentForm > .input-field > input{
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid rgb(108, 118, 252);
+#headerContainer > small {
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #5d569d;
+}
+
+/* ===== STUDENT FORM ===== */
+#formContainer {
+    max-width: 1200px;
+    margin: 20px auto 30px;
+    padding: 25px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #a2e8f0, #c1d9ff);
+    box-shadow: 0 5px 15px rgba(108, 118, 252, 0.15);
+}
+
+#studentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#formContainer #studentForm .input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#formContainer #studentForm .input-field label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #353c73;
+}
+
+#formContainer #studentForm .input-field input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #b1baff;
+    border-radius: 8px;
+    background: #fff;
+    color: #303552;
     font-size: 15px;
     outline: none;
-
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-#formContainer > #studentForm > :nth-last-child(1) > button {
-    background-color: rgb(108, 118, 252); 
-    color: white;
+#formContainer #studentForm .input-field input:focus {
+    border-color: #6c76fc;
+    box-shadow: 0 0 0 3px rgba(108, 118, 252, 0.15);
+}
+
+/* Add Student button */
+#formContainer #studentForm button {
+    width: 100%;
+    padding: 12px 20px;
     border: none;
-    padding: 10px 20px;
-    border-radius: 15px;
-    cursor: pointer;}
-
-#listContainer > .list-item{
-    margin: 30px;
-    padding: 25px;
-    border-radius: 30px;
-    box-shadow: 2px 3px rgba(133, 68, 207, 0.8);
-    background-color: rgb(186, 241, 250);
-}
-  
-#listContainer > .list-item >h2{
-    margin: 30px;
-    padding: 25px;
-    border-radius: 30px;
-    box-shadow: 2px 3px rgba(133, 68, 207, 0.8);
-    background-color: rgb(240, 253, 255);
-}
-
-#listContainer > .list-item >p{
-    margin: 30px;
-    padding: 25px;
-    border-radius: 30px;
-    box-shadow: 2px 3px rgba(133, 68, 207, 0.8);
-    background-color: rgb(255, 255, 255);
-}
-
-#listContainer > .list-item >button{
-    margin: 10px;
-    padding: 15px;
-    border-radius: 20px;
-    box-shadow: 2px 3px rgba(0, 0, 0, 0.8);
-    background-color: rgb(246, 246, 246);
-}
-
-#listContainer > .list-item >button:hover{
-    background-color: rgb(108, 118, 252);
+    border-radius: 9px;
+    background: linear-gradient(135deg, #6c76fc, #8056b1);
     color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-#listContainer{
+#formContainer #studentForm button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(108, 118, 252, 0.3);
+}
+
+/* ===== STUDENT LIST GRID ===== */
+#listContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 0 10px;
     display: grid;
-    grid-template-columns: repeat(12,1fr) ;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: stretch;
 }
 
-@media (width <= 320px) {
-    #listContainer > .list-item{
-        display: grid;
-        grid-column: span 12;
+/* ===== INDIVIDUAL STUDENT CARD ===== */
+#listContainer > .list-item {
+    min-width: 0;
+    padding: 22px 18px;
+    border: 1px solid #dce2ff;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(76, 87, 160, 0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#listContainer > .list-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 20px rgba(76, 87, 160, 0.16);
+}
+
+/* Student Name */
+#listContainer > .list-item > h2 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #454ec2;
+    font-size: 18px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+/* Student Program */
+#listContainer > .list-item > p {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* Delete button */
+#listContainer > .list-item > button {
+    width: 100%;
+    margin: auto 0 0;
+    padding: 10px 14px;
+    border: 1px solid #d7d9ff;
+    border-radius: 9px;
+    background: #f0f1ff;
+    color: #5a60d6;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+#listContainer > .list-item > button:hover {
+    background: #6c76fc;
+    color: #ffffff;
+    border-color: #6c76fc;
+}
+
+#listContainer > .list-item > button:active {
+    transform: translateY(0), scale(0.95);
+
+    box-shadow: 0 2px 5px rgba(255, 77, 109, 0.2);
+}
+
+/* ===== TABLET ===== */
+@media (min-width: 600px) {
+    #listContainer {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
-@media (width > 1000px) {
-    #listContainer > .list-item{
-        grid-column: span 2;
+/* ===== DESKTOP ===== */
+@media (min-width: 1000px) {
+    #listContainer {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
 
-@media (width > 320px) and (width <= 1000px) {
-    #listContainer > .list-item{
-        grid-column: span 4;
+/* ===== SMALL PHONE ===== */
+@media (max-width: 400px) {
+    body {
+        padding: 5px;
+    }
+
+    #headerContainer {
+        margin: 12px 5px;
+        padding: 18px 12px;
+    }
+
+    #headerContainer > h1 {
+        font-size: 22px;
+    }
+
+    #formContainer {
+        margin: 12px 5px 22px;
+        padding: 16px;
+    }
+
+    #listContainer {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+        padding: 0 5px;
+    }
+
+    #listContainer > .list-item {
+        padding: 18px;
     }
 }
